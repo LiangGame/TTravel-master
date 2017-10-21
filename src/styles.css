@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body,ul,li{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+#content img{
+  width: 240px;
+  height: 180px;
+}

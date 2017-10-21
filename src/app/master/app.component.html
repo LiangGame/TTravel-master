@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div id="nav" class="row">
+    <ul class="pull-left">
+      <li><a routerLink="./list" *ngIf="!!isLogin">返回首页</a></li>
+    </ul>
+    <ul class="pull-right">
+      <!--<li><a routerLink="./list">管理面板</a></li>-->
+      <li><a routerLink="./login" *ngIf="!isLogin">登录</a></li>
+      <li><a style="cursor: default" (click)="signOut()" *ngIf="!!isLogin">退出</a></li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>

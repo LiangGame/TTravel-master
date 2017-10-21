@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <h2>{{notes?.title}}</h2>
+      <p><span>作者: {{notes?.userName}}  </span> <span>发表时间: {{notes?.pubtime | localeDate:''}}</span></p>
+      <div id="content" class="content" [innerHTML]="notes?.content">内容</div>
+    </div>
+    <div class="col-sm-3">
+      <div id="checkBtn">
+        <div class="yes">
+          <button (click)="ischeck(notes.id,'1')">通过审核</button>
+        </div>
+        <div class="no">
+          <button (click)="ischeck(notes.id,'2')">未通过审核</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

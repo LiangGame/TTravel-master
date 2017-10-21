@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="list-left">
+        <ul>
+          <!--<li><a href="">用户管理</a></li>-->
+          <!--<li><a href="">目的地管理</a></li>-->
+          <li><a>游记管理</a></li>
+          <!--<li><a href="">攻略管理</a></li>-->
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="list-right">
+        <ul>
+          <li *ngFor="let notes of allNotes | paginate: { itemsPerPage: 10, currentPage: p }" (click)="getdetails(notes.id)">
+            <div class="col-sm-8">
+              <span class="col-sm-6">{{notes?.title}}</span>
+              <span class="col-sm-6"><time>{{notes?.pubtime | localeDate:''}}</time></span>
+            </div>
+            <div class="col-sm-4 text-center">
+              <span class="_check" *ngIf="notes?.check == 0">待审核</span>
+              <span class="ischeck" *ngIf="notes?.check == 1">通过</span>
+              <span class="nocheck" *ngIf="notes?.check == 2">未通过</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 15px;">
+    <div style="margin: 0 auto; width: 340px; font-size: 16px">
+      <pagination-controls style="width: 400px" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

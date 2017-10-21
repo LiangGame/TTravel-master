@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="bg-img"></div>
+  <div class="row">
+    <div id="login_form" class="col-md-4 col-md-push-4">
+      <form class="form-horizontal" #loginForm="ngForm">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">用户名</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="telephone" name="telephone" placeholder="用户名/手机号"
+                   #tel="ngModel" [(ngModel)]="_telephone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">密码</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="password" name="password" placeholder="密码"
+            #pass="ngModel" [(ngModel)]="_password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-5 col-sm-2">
+            <button type="button" class="btn btn-default" (click)="login(loginForm)"> 登录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
